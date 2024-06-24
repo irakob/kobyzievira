@@ -1,0 +1,16 @@
+def binary_search(sorted_list, target):
+    low, high = 0, len(sorted_list) - 1 
+    while low <= high:
+        mid = low + (high - low) // 2
+        if sorted_list[mid] == target:
+            return True
+        elif sorted_list[mid] < target:
+            low = mid + 1 
+        else:
+            high = mid - 1 
+    return False
+    
+sorted_list = [3, 6, 9, 23, 34, 56, 64, 85]
+target = 9
+result = binary_search(sorted_list, target)
+print ("Знайдено" if result else "Не знайдено")
